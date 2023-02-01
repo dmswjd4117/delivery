@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
 
-@Entity
+@Entity(name = "address")
 @Getter
 public class Address {
 
@@ -50,9 +50,9 @@ public class Address {
 
   private String detailBuildingName;
 
-  private String BuildingNameChangeHistory;
+  private String buildingNameChangeHistory;
 
-  private String BuildingNameChangeHistoryDetail;
+  private String buildingNameChangeHistoryDetail;
 
   private String livingStatus;
 

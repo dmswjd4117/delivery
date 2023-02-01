@@ -1,12 +1,16 @@
 spring:
+  main:
+    jdbcUrl: jdbc:mysql://localhost:3306/delivery?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&serverTimeZone=Asia/Seoul
+    username: root
+    password: 1234
 
+  address:
+    jdbcUrl: ENC(oxBrP3RSlCqn+keB4jOAr4pJmWq6CHkPwAxZ0B5s45694ym9xcOR6ggYCwOx0oZtzU2OGqk4tOqKLEwgPK4krT5Ppd+ZnS4cffwQgZxyFhDUuOQDvqNUP07NJZUnM99Y/vrsXJ7hFuAyvEwPTwor+1y7+7tPskcjbBWPYrMgxtqpQVAmE3mvy260ZWf/SQZ5ZUnArV6cMKAiOC0oteZW/rb6SSej2nYYScuxAFfjIbQ=)
+    username: admin
+    password: ENC(k7tsWNddba6cB23sf/KzdREZiFV/I0V4)
 
   jpa:
     open-in-view: false
-    properties:
-      hibernate:
-        hbm2ddl.auto: update
-        format_sql: true
 
 
 logging.level:
