@@ -17,8 +17,11 @@ import lombok.NoArgsConstructor;
 @Getter
 public class User {
 
-  @EmbeddedId
-  private UserId userId;
+  @Getter(AccessLevel.NONE)
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "user_id", nullable = false)
+  private Long id;
 
   private String email;
 
@@ -28,4 +31,14 @@ public class User {
 
   @OneToMany(mappedBy = "user")
   private List<DeliveryLocation> deliveryLocations;
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public User(String email, String password, String name) {
+    this.email = email;
+    this.password = password;
+    this.name = name;
+  }
 }
