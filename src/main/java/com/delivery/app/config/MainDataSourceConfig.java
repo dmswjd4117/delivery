@@ -1,6 +1,6 @@
 package com.delivery.app.config;
 
-import com.delivery.app.address.infrastructure.AddressRepository;
+import com.delivery.address.infrastructure.AddressRepository;
 import java.util.HashMap;
 import javax.sql.DataSource;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
-import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -28,14 +27,12 @@ import org.springframework.transaction.PlatformTransactionManager;
 public class MainDataSourceConfig {
 
   @Bean(name = "mainDataSource")
-  @Primary
   @ConfigurationProperties(prefix = "spring.main")
   public DataSource datasource() {
     return DataSourceBuilder.create().build();
   }
 
   @Bean(name = "mainEntityManger")
-  @Primary
   public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
     LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
     em.setDataSource(datasource());
@@ -55,7 +52,6 @@ public class MainDataSourceConfig {
 
 
   @Bean(name = "mainTransactionManger")
-  @Primary
   public PlatformTransactionManager transactionManager() {
     JpaTransactionManager jpaTransactionManager = new JpaTransactionManager();
     jpaTransactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
