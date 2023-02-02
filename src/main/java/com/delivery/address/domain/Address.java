@@ -1,12 +1,14 @@
-package com.delivery.app.address.domain;
+package com.delivery.address.domain;
 
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
+import lombok.ToString;
 
 @Entity(name = "address")
 @Getter
+@ToString
 public class Address {
 
   @Id

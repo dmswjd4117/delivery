@@ -1,6 +1,7 @@
 package com.delivery.app.config;
 
 import java.util.HashMap;
+import javax.inject.Qualifier;
 import javax.sql.DataSource;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -15,11 +16,10 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @EnableJpaRepositories(
-    basePackages = "com.delivery.app.address"
+    basePackages = "com.delivery.address"
     , entityManagerFactoryRef = "addressEntityManger"
     , transactionManagerRef = "addressTransactionManger"
 )
-
 public class AddressDataSourceConfig {
 
   @Bean(name = "addressDataSource")
@@ -32,7 +32,7 @@ public class AddressDataSourceConfig {
   public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
     LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
     em.setDataSource(datasource());
-    em.setPackagesToScan("com.delivery.app.address");
+    em.setPackagesToScan("com.delivery.address");
     em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
     HashMap<String, Object> properties = new HashMap<>();

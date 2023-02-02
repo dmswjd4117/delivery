@@ -1,10 +1,10 @@
-package com.delivery.app.address.presentaion.dto.response;
+package com.delivery.address.dto.response;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 
 @Getter
-public class AddressResponse {
+public class AddressSearchResponse {
 
   @Schema(title = "주소관할읍면동코드",
       description = "시군구코드(5)+읍면동코드(3)+00)")
