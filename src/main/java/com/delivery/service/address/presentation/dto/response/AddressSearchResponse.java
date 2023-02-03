@@ -1,9 +1,11 @@
-package com.delivery.service.address.dto.response;
+package com.delivery.service.address.presentation.dto.response;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
+@ToString
 public class AddressSearchResponse {
 
   @Schema(title = "주소관할읍면동코드",
@@ -33,5 +35,8 @@ public class AddressSearchResponse {
 
   @Schema(title = "우편번호")
   private String zipCode;
+
+  @Schema(name = "건물명")
+  private String buildingNameForCity;
 
 }

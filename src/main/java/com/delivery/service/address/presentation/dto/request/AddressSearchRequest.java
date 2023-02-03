@@ -1,7 +1,11 @@
-package com.delivery.service.address.dto.request;
+package com.delivery.service.address.presentation.dto.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Builder;
+import lombok.Getter;
 
+@Getter
+@Builder
 public class AddressSearchRequest {
 
   @Schema(name = "시도명", example = "서울특별시")

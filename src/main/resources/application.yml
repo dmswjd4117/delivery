@@ -16,5 +16,8 @@ spring:
 logging.level:
   org.hibernate:
     SQL: debug
-    type: trace
+    type:
+      descriptor:
+        BasicBinder: trace
+
 
